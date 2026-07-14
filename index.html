@@ -76,15 +76,28 @@
             border: 1px solid #EAECEE;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .card h3 {
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 8px; /* 통계 정보 수용을 위해 여백 조절 */
             font-size: 1.15rem;
             color: var(--primary-dark);
             border-bottom: 2px solid var(--primary-light);
             padding-bottom: 10px;
+        }
+
+        /* 💡 새로 추가한 설문조사 대상자 정보 스타일 */
+        .survey-info {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background-color: var(--primary-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+            display: inline-block;
+            font-weight: 500;
         }
 
         .chart-container {
@@ -201,6 +214,8 @@
             <!-- 그래프 1: 복용 여부 (실태) -->
             <div class="card">
                 <h3>📌 건강기능식품 복용 여부</h3>
+                <!-- 💡 피드백 반영: 조사 대상 및 규모 정보 명시 -->
+                <div class="survey-info">👥 조사 대상: 전국 만 19세 이상 성인 남녀 1,500명 (출처: 식품의약품안전처)</div>
                 <div class="chart-container">
                     <canvas id="intakeStatusChart"></canvas>
                 </div>
@@ -209,6 +224,8 @@
             <!-- 그래프 2: 복용 개수 (중복 섭취 실태) -->
             <div class="card">
                 <h3>👥 복용하는 건강기능식품 개수</h3>
+                <!-- 💡 피드백 반영: 조사 대상 및 규모 정보 명시 -->
+                <div class="survey-info">📊 조사 대상: 건강기능식품 복용자 대상 설문 (출처: 통계청 및 식약처 종합)</div>
                 <div class="chart-container">
                     <canvas id="familyIntakeChart"></canvas>
                 </div>
