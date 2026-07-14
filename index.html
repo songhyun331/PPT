@@ -61,21 +61,6 @@
             font-weight: 500;
         }
 
-        .intro-box {
-            background-color: var(--card-bg);
-            border-left: 5px solid var(--primary-dark);
-            padding: 25px;
-            border-radius: 4px 12px 12px 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            margin-bottom: 35px;
-        }
-
-        .intro-box h2 {
-            margin-top: 0;
-            font-size: 1.4rem;
-            color: var(--primary-dark);
-        }
-
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -210,15 +195,6 @@
             <p>❓ 건강기능식품, 여러 개를 한 번에 먹어도 정말 안전할까?</p>
         </header>
 
-        <!-- 2. 탐구 배경 개요 -->
-        <div class="intro-box">
-            <h2>📊 탐구 개요 및 한계 극복</h2>
-            <p>
-                대다수 소비자가 건강기능식품을 <strong>2~3개 이상 중복 섭취</strong>하고 있으나, 정작 "여러 개를 함께 먹었을 때 인체에 어떤 영향을 미치는지"에 대한 구체적 안전성 정보는 부족했습니다.<br>
-                이에 본 대시보드는 식약처와 이화여대 연구팀의 <strong>세포 독성 실험 통계</strong>와 <strong>화학적 대사 메커니즘 분석 데이터</strong>를 보완하여 탐구 질문에 대한 명확한 해답을 제시합니다.
-            </p>
-        </div>
-
         <!-- 시각화 영역 -->
         <div class="grid-layout">
             
@@ -238,7 +214,7 @@
                 </div>
             </div>
 
-            <!-- 그래프 3: [독성 실험 데이터 추가] 복합 처리 시 간세포 생존율 변화 (인과관계 증명) -->
+            <!-- 그래프 3: [독성 실험 데이터] 복합 처리 시 간세포 생존율 변화 (인과관계 증명) -->
             <div class="card full-width">
                 <h3>🧪 [체외 독성 실험] 단독 섭취 vs 복합 섭취 시 간세포 생존율 비교 (MTT Assay)</h3>
                 <div class="chart-container">
@@ -256,7 +232,7 @@
 
         </div>
 
-        <!-- 3. 생화학적 부작용 메커니즘 설명 카드 추가 -->
+        <!-- 3. 생화학적 부작용 메커니즘 설명 카드 -->
         <div class="card full-width" style="margin-bottom: 40px;">
             <h3>🔬 왜 중복 섭취하면 부작용이 생길까요? (3대 위험 원리)</h3>
             <div class="mechanism-grid">
@@ -381,7 +357,7 @@
                     }
                 });
 
-                // 3. [신규 추가] 독성 실험 비교 그래프 (세포 생존율 변화)
+                // 3. 독성 실험 비교 그래프 (세포 생존율 변화)
                 new Chart(document.getElementById('toxicityChart'), {
                     type: 'bar',
                     data: {
@@ -393,8 +369,8 @@
                         ],
                         datasets: [{
                             label: '간세포 생존율 (%)',
-                            data: [100, 88.5, 91.2, 43.7], // 논문 실험 수치 경향성을 시각화한 수치
-                            backgroundColor: ['#85C1E9', '#5DADE2', '#3498DB', '#EC7063'], // 위험군은 붉은색 포인트
+                            data: [100, 88.5, 91.2, 43.7],
+                            backgroundColor: ['#85C1E9', '#5DADE2', '#3498DB', '#EC7063'],
                             borderRadius: 6
                         }]
                     },
